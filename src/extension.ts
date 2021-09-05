@@ -1,10 +1,10 @@
 import * as vscode from "vscode";
 
-const insertText = (val: string) => {
+const insertText = (text: string) => {
   const editor = vscode.window.activeTextEditor;
 
   if (!editor) {
-    vscode.window.showErrorMessage("Can't insert log because no document is open");
+    vscode.window.showErrorMessage("Can't insert console because document is not open");
     return;
   }
 
@@ -12,7 +12,7 @@ const insertText = (val: string) => {
   const range = new vscode.Range(selection.start, selection.end);
 
   editor.edit((editBuilder) => {
-    editBuilder.replace(range, val);
+    editBuilder.replace(range, text);
   });
 };
 
@@ -67,6 +67,30 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(insertConsoleTable);
+
+  // insert console.warn()
+  const insertConsoleWarn = vscode.commands.registerCommand(
+    "js-console.insertConsoleWarn",
+    async () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+
+      const selection = editor.selection;
+      const text = editor.document.getText(selection);
+      if (text) {
+        await vscode.commands.executeCommand("editor.action.insertLineAfter");
+        const consoleText = `console.warn('${text}: ', ${text});`;
+        insertText(consoleText);
+      } else {
+        const consoleText = "console.warn();";
+        insertText(consoleText);
+      }
+    }
+  );
+
+  context.subscriptions.push(insertConsoleWarn);
 }
 
 export function deactivate() {}
