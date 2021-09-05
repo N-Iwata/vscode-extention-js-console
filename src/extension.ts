@@ -19,6 +19,7 @@ const insertText = (val: string) => {
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "js-console" is now active!');
 
+  // insert console.log()
   const insertConsoleLog = vscode.commands.registerCommand("js-console.insertConsoleLog", () => {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -36,6 +37,28 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   context.subscriptions.push(insertConsoleLog);
+
+  // insert console.table()
+  const insertConsoleTable = vscode.commands.registerCommand(
+    "js-console.insertConsoleTable",
+    () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+
+      const selection = editor.selection;
+      const text = editor.document.getText(selection);
+      text
+        ? vscode.commands.executeCommand("editor.action.insertLineAfter").then(() => {
+            const logToInsert = `console.table('${text}: ', ${text});`;
+            insertText(logToInsert);
+          })
+        : insertText("console.table();");
+    }
+  );
+
+  context.subscriptions.push(insertConsoleTable);
 }
 
 export function deactivate() {}

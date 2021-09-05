@@ -11,21 +11,32 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:js-console.helloWorld"
+    "onCommand:js-console.insertConsoleLog",
+    "onCommand:js-console.insertConsoleTable"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.insertConsoleLog",
+        "command": "js-console.insertConsoleLog",
         "title": "Insert Console Log Statement"
+      },
+      {
+        "command": "js-console.insertConsoleTable",
+        "title": "Insert Console Table Statement"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.insertConsoleLog",
+        "command": "js-console.insertConsoleLog",
         "key": "shift+ctrl+l",
         "mac": "shift+cmd+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "js-console.insertConsoleTable",
+        "key": "shift+ctrl+t",
+        "mac": "shift+cmd+t",
         "when": "editorTextFocus"
       }
     ]
