@@ -13,7 +13,8 @@
   "activationEvents": [
     "onCommand:js-console.insertConsoleLog",
     "onCommand:js-console.insertConsoleTable",
-    "onCommand:js-console.insertConsoleWarn"
+    "onCommand:js-console.insertConsoleWarn",
+    "onCommand:js-console.insertConsoleError"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -29,6 +30,10 @@
       {
         "command": "js-console.insertConsoleWarn",
         "title": "Insert Console Warn Statement"
+      },
+      {
+        "command": "js-console.insertConsoleError",
+        "title": "Insert Console Error Statement"
       }
     ],
     "keybindings": [
@@ -48,6 +53,12 @@
         "command": "js-console.insertConsoleWarn",
         "key": "shift+ctrl+w",
         "mac": "shift+cmd+w",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "js-console.insertConsoleError",
+        "key": "shift+ctrl+e",
+        "mac": "shift+cmd+e",
         "when": "editorTextFocus"
       }
     ]

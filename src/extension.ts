@@ -91,6 +91,30 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(insertConsoleWarn);
+
+  // insert console.error()
+  const insertConsoleError = vscode.commands.registerCommand(
+    "js-console.insertConsoleError",
+    async () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+
+      const selection = editor.selection;
+      const text = editor.document.getText(selection);
+      if (text) {
+        await vscode.commands.executeCommand("editor.action.insertLineAfter");
+        const consoleText = `console.error('${text}: ', ${text});`;
+        insertText(consoleText);
+      } else {
+        const consoleText = "console.error();";
+        insertText(consoleText);
+      }
+    }
+  );
+
+  context.subscriptions.push(insertConsoleError);
 }
 
 export function deactivate() {}
