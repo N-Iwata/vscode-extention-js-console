@@ -1,70 +1,47 @@
-# js-console README
-
-This is the README for your extension "js-console". After writing up a brief description, we recommend including the following sections.
+# vscode-extension-js-console README
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Easily insert console.log | table | warn | error statements, by [@rpf_nob](https://twitter.com/rpf_nob)
 
-For example if there is an image subfolder under your extension project workspace:
+## Install
 
-\!\[feature X\]\(images/feature-x.png\)
+This extension is available for free in the Visual Studio Code Marketplace
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## How to use
 
-## Requirements
+With selection or cursor into the variable(Anything is OK):
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Press Cmd+Shift+L => The output on a new line will be: console.log('variable: ', variable);
+- Press Cmd+Shift+T => The output on a new line will be: console.table('variable: ', variable);
+- Press Cmd+Shift+W => The output on a new line will be: console.warn('variable: ', variable);
+- Press Cmd+Shift+E => The output on a new line will be: console.error('variable: ', variable);
 
-## Extension Settings
+Without selection:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- Press Cmd+Shift+L => The output on the same line will be: console.log();
+- Press Cmd+Shift+T => The output on the same line will be: console.table();
+- Press Cmd+Shift+W => The output on the same line will be: console.warn();
+- Press Cmd+Shift+E => The output on the same line will be: console.error();
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+for windows Ctrl+Shift+・・・
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
 Initial release of ...
 
-### 1.0.1
+## Contribute
 
-Fixed issue #.
+### Pull requests
 
-### 1.1.0
+Feel free to make a pull request to the main branch to fix any bugs or suggestions for improvement.
 
-Added features X, Y, and Z.
+### Issues
 
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
+Feel free to create an issue if you have any problems or requests for improvement.
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+## License
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[MIT License](LICENSE)
