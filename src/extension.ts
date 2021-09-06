@@ -9,7 +9,6 @@ const insertText = (text: string) => {
     vscode.window.showErrorMessage("Can't insert console because document is not open");
     return;
   }
-  const document = editor.document;
   const selection = editor.selection;
   const range = new vscode.Range(selection.start, selection.end);
 
