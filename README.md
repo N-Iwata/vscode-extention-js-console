@@ -2,7 +2,7 @@
 
 ## Features
 
-Easily insert console.log | table | warn | error statements, by [@rpf_nob](https://twitter.com/rpf_nob)
+Easily insert console.log | table | warn | error statements, by N-Iwata[(@rpf_nob)](https://twitter.com/rpf_nob)
 
 ## Install
 
