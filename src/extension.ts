@@ -7,7 +7,7 @@ const insertText = (text: string) => {
     vscode.window.showErrorMessage("Can't insert console because document is not open");
     return;
   }
-
+  const document = editor.document;
   const selection = editor.selection;
   const range = new vscode.Range(selection.start, selection.end);
 
@@ -28,8 +28,14 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
 
-      const selection = editor.selection;
-      const text = editor.document.getText(selection);
+      let selection = editor.selection;
+      let text = editor.document.getText(selection);
+
+      if (!text) {
+        await vscode.commands.executeCommand("editor.action.addSelectionToNextFindMatch");
+        selection = editor.selection;
+        text = editor.document.getText(selection);
+      }
 
       if (text) {
         await vscode.commands.executeCommand("editor.action.insertLineAfter");
