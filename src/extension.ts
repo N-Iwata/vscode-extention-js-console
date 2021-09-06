@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 
+type InsertType = "log" | "table" | "warn" | "error";
+
 const insertText = (text: string) => {
   const editor = vscode.window.activeTextEditor;
 
@@ -16,107 +18,63 @@ const insertText = (text: string) => {
   });
 };
 
+const insertConsole = async (type: InsertType) => {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) {
+    return;
+  }
+
+  let selection = editor.selection;
+  let text = editor.document.getText(selection);
+
+  if (!text) {
+    await vscode.commands.executeCommand("editor.action.addSelectionToNextFindMatch");
+    selection = editor.selection;
+    text = editor.document.getText(selection);
+  }
+
+  if (text) {
+    await vscode.commands.executeCommand("editor.action.insertLineAfter");
+    const consoleText = `console.${type}('${text}: ', ${text});`;
+    insertText(consoleText);
+  } else {
+    const consoleText = `console.${type}();`;
+    insertText(consoleText);
+  }
+};
+
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "js-console" is now active!');
 
   // insert console.log()
-  const insertConsoleLog = vscode.commands.registerCommand(
-    "js-console.insertConsoleLog",
-    async () => {
-      const editor = vscode.window.activeTextEditor;
-      if (!editor) {
-        return;
-      }
-
-      let selection = editor.selection;
-      let text = editor.document.getText(selection);
-
-      if (!text) {
-        await vscode.commands.executeCommand("editor.action.addSelectionToNextFindMatch");
-        selection = editor.selection;
-        text = editor.document.getText(selection);
-      }
-
-      if (text) {
-        await vscode.commands.executeCommand("editor.action.insertLineAfter");
-        const consoleText = `console.log('${text}: ', ${text});`;
-        insertText(consoleText);
-      } else {
-        const consoleText = "console.log();";
-        insertText(consoleText);
-      }
-    }
-  );
+  const insertConsoleLog = vscode.commands.registerCommand("js-console.insertConsoleLog", () => {
+    insertConsole("log");
+  });
 
   context.subscriptions.push(insertConsoleLog);
 
   // insert console.table()
   const insertConsoleTable = vscode.commands.registerCommand(
     "js-console.insertConsoleTable",
-    async () => {
-      const editor = vscode.window.activeTextEditor;
-      if (!editor) {
-        return;
-      }
-
-      const selection = editor.selection;
-      const text = editor.document.getText(selection);
-      if (text) {
-        await vscode.commands.executeCommand("editor.action.insertLineAfter");
-        const consoleText = `console.table('${text}: ', ${text});`;
-        insertText(consoleText);
-      } else {
-        const consoleText = "console.table();";
-        insertText(consoleText);
-      }
+    () => {
+      insertConsole("table");
     }
   );
 
   context.subscriptions.push(insertConsoleTable);
 
   // insert console.warn()
-  const insertConsoleWarn = vscode.commands.registerCommand(
-    "js-console.insertConsoleWarn",
-    async () => {
-      const editor = vscode.window.activeTextEditor;
-      if (!editor) {
-        return;
-      }
-
-      const selection = editor.selection;
-      const text = editor.document.getText(selection);
-      if (text) {
-        await vscode.commands.executeCommand("editor.action.insertLineAfter");
-        const consoleText = `console.warn('${text}: ', ${text});`;
-        insertText(consoleText);
-      } else {
-        const consoleText = "console.warn();";
-        insertText(consoleText);
-      }
-    }
-  );
+  const insertConsoleWarn = vscode.commands.registerCommand("js-console.insertConsoleWarn", () => {
+    insertConsole("warn");
+  });
 
   context.subscriptions.push(insertConsoleWarn);
 
   // insert console.error()
   const insertConsoleError = vscode.commands.registerCommand(
     "js-console.insertConsoleError",
-    async () => {
-      const editor = vscode.window.activeTextEditor;
-      if (!editor) {
-        return;
-      }
-
-      const selection = editor.selection;
-      const text = editor.document.getText(selection);
-      if (text) {
-        await vscode.commands.executeCommand("editor.action.insertLineAfter");
-        const consoleText = `console.error('${text}: ', ${text});`;
-        insertText(consoleText);
-      } else {
-        const consoleText = "console.error();";
-        insertText(consoleText);
-      }
+    () => {
+      insertConsole("error");
     }
   );
 
