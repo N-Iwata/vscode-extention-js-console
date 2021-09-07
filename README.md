@@ -6,7 +6,7 @@ VSCode extension. Easily insert console statements., by N-Iwata[(@rpf_nob)](http
 
 ## Installing
 
-This extension is available for free in the Visual Studio Code Marketplace
+This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=N-Iwata.vscode-extention-js-console)
 
 ## Usage
 
