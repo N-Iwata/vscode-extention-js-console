@@ -4,6 +4,7 @@
   "description": "VSCode extension. Easily insert console statements.",
   "version": "0.1.0",
   "publisher": "N-Iwata",
+  "repository": "https://github.com/N-Iwata/vscode-extension-js-console",
   "engines": {
     "vscode": "^1.60.0"
   },
