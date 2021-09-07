@@ -2,13 +2,13 @@
 
 ## Features
 
-Easily insert console.log | table | warn | error statements, by N-Iwata[(@rpf_nob)](https://twitter.com/rpf_nob)
+VSCode extension. Easily insert console statements., by N-Iwata[(@rpf_nob)](https://twitter.com/rpf_nob)
 
-## Install
+## Installing
 
 This extension is available for free in the Visual Studio Code Marketplace
 
-## How to use
+## Usage
 
 With selection or cursor into the variable(Anything is OK):
 
@@ -26,13 +26,7 @@ Without selection:
 
 for windows Ctrl+Shift+・・・
 
-## Release Notes
-
-### 1.0.0
-
-Initial release of ...
-
-## Contribute
+## Contributing
 
 ### Pull requests
 

@@ -1,8 +1,8 @@
 {
-  "name": "vscode-js-console",
-  "displayName": "JavaScript Console",
-  "description": "Insert console",
-  "version": "0.0.1",
+  "name": "vscode-extention-js-console",
+  "displayName": "JavaScript Insert Console",
+  "description": "VSCode extension. Easily insert console statements.",
+  "version": "0.1.0",
   "publisher": "N-Iwata",
   "engines": {
     "vscode": "^1.60.0"
