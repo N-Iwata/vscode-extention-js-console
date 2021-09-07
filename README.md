@@ -1,4 +1,4 @@
-# vscode-extension-js-console README
+# vscode-extension-js-console
 
 ## Features
 
