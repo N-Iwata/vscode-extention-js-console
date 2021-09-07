@@ -1,8 +1,15 @@
 # vscode-extension-js-console
 
+![](https://img.shields.io/badge/Release-v0.2.0-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/vscode-^1.60.0-blue.svg?style=flat-square)
+
 ## Features
 
 VSCode extension. Easily insert console statements., by N-Iwata[(@rpf_nob)](https://twitter.com/rpf_nob)
+
+## Requirements
+
+Visual Studio Code 1.60.0 later
 
 ## Installing
 
