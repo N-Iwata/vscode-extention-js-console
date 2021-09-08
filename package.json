@@ -3,7 +3,7 @@
   "displayName": "JavaScript Insert Console",
   "description": "VSCode extension. Easily insert console statements.",
   "icon": "images/icon.png",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "N-Iwata",
   "repository": "https://github.com/N-Iwata/vscode-extension-js-console",
   "engines": {
