@@ -24,7 +24,7 @@ This extension is available for free in the [Visual Studio Code Marketplace](htt
 With selection or cursor into the variable(Anything is OK):
 
 - Press Cmd+Shift+L => The output on a new line will be: console.log('variable: ', variable);
-- Press Cmd+Shift+T => The output on a new line will be: console.table('variable: ', variable);
+- Press Cmd+Shift+T => The output on a new line will be: console.table(variable);
 - Press Cmd+Shift+W => The output on a new line will be: console.warn('variable: ', variable);
 - Press Cmd+Shift+E => The output on a new line will be: console.error('variable: ', variable);
 
