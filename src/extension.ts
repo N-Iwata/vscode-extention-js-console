@@ -34,7 +34,8 @@ const insertConsole = async (type: InsertType) => {
 
   if (text) {
     await vscode.commands.executeCommand("editor.action.insertLineAfter");
-    const consoleText = `console.${type}('${text}: ', ${text});`;
+    const consoleText =
+      type === "table" ? `console.${type}(${text});` : `console.${type}('${text}: ', ${text});`;
     insertText(consoleText);
   } else {
     const consoleText = `console.${type}();`;
