@@ -63,7 +63,17 @@
         "mac": "shift+cmd+e",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "JavaScript Insert Console",
+      "properties": {
+        "js-console.textColor": {
+          "type": "string",
+          "default": "#000000",
+          "description": "Enter the text color for console.log."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
