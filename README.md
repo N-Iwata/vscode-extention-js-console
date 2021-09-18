@@ -41,7 +41,7 @@ for windows Ctrl+Shift+・・・
 
 ### Pull requests
 
-Feel free to make a pull request to the main branch to fix any bugs or suggestions for improvement.
+Feel free to make a pull request to the develop branch to fix any bugs or suggestions for improvement.
 
 ### Issues
 
