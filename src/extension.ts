@@ -2,6 +2,10 @@ import * as vscode from "vscode";
 
 type InsertType = "log" | "table" | "warn" | "error";
 
+const isColor = (color: string) => {
+  return color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) !== null;
+};
+
 const insertText = (text: string) => {
   const editor = vscode.window.activeTextEditor;
 
@@ -22,6 +26,7 @@ const insertConsole = async (type: InsertType) => {
   if (!editor) {
     return;
   }
+  const textColor = vscode.workspace.getConfiguration("js-console").get("textColor") as string;
 
   let selection = editor.selection;
   let text = editor.document.getText(selection);
@@ -32,14 +37,47 @@ const insertConsole = async (type: InsertType) => {
     text = editor.document.getText(selection);
   }
 
-  if (text) {
-    await vscode.commands.executeCommand("editor.action.insertLineAfter");
-    const consoleText =
-      type === "table" ? `console.${type}(${text});` : `console.${type}('${text}: ', ${text});`;
-    insertText(consoleText);
+  if (type === "log") {
+    if (text) {
+      await vscode.commands.executeCommand("editor.action.insertLineAfter");
+
+      if (textColor) {
+        if (!isColor(textColor)) {
+          vscode.window.showInformationMessage(
+            "Text color cannot be specified because the color code is incorrect."
+          );
+          const consoleText = `console.${type}('${text}: ', ${text});`;
+          insertText(consoleText);
+        } else {
+          const consoleText = `console.${type}('%c ${text}: ', 'color: ${textColor}', ${text});`;
+          insertText(consoleText);
+        }
+      } else {
+        const consoleText = `console.${type}('${text}: ', ${text});`;
+        insertText(consoleText);
+      }
+    } else {
+      const consoleText = `console.${type}();`;
+      insertText(consoleText);
+    }
+  } else if (type === "table") {
+    if (text) {
+      await vscode.commands.executeCommand("editor.action.insertLineAfter");
+      const consoleText = `console.${type}(${text});`;
+      insertText(consoleText);
+    } else {
+      const consoleText = `console.${type}();`;
+      insertText(consoleText);
+    }
   } else {
-    const consoleText = `console.${type}();`;
-    insertText(consoleText);
+    if (text) {
+      await vscode.commands.executeCommand("editor.action.insertLineAfter");
+      const consoleText = `console.${type}('${text}: ', ${text});`;
+      insertText(consoleText);
+    } else {
+      const consoleText = `console.${type}();`;
+      insertText(consoleText);
+    }
   }
 };
 

@@ -69,8 +69,8 @@
       "properties": {
         "js-console.textColor": {
           "type": "string",
-          "default": "#000000",
-          "description": "Enter the text color for console.log."
+          "default": "",
+          "description": "Enter the text color for console.log.(ex: #23d541, #ff0, etc...)"
         }
       }
     }
