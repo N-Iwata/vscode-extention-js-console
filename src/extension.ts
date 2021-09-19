@@ -2,6 +2,10 @@ import * as vscode from "vscode";
 
 type InsertType = "log" | "table" | "warn" | "error";
 
+export const isColor = (color: string) => {
+  return color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) !== null;
+};
+
 const insertText = (text: string) => {
   const editor = vscode.window.activeTextEditor;
 
@@ -17,11 +21,37 @@ const insertText = (text: string) => {
   });
 };
 
+export const getText = (type: InsertType, text: string, color: string) => {
+  if (type === "log") {
+    if (text) {
+      if (color) {
+        if (!isColor(color)) {
+          vscode.window.showInformationMessage(
+            "Text color cannot be specified because the color code is incorrect."
+          );
+          return `console.${type}('${text}: ', ${text});`;
+        } else {
+          return `console.${type}('%c ${text}: ', 'color: ${color}', ${text});`;
+        }
+      } else {
+        return `console.${type}('${text}: ', ${text});`;
+      }
+    } else {
+      return `console.${type}();`;
+    }
+  } else if (type === "table") {
+    return text ? `console.${type}(${text});` : `console.${type}();`;
+  } else {
+    return text ? `console.${type}('${text}: ', ${text});` : `console.${type}();`;
+  }
+};
+
 const insertConsole = async (type: InsertType) => {
   const editor = vscode.window.activeTextEditor;
   if (!editor) {
     return;
   }
+  const color = vscode.workspace.getConfiguration("js-console").get("textColor") as string;
 
   let selection = editor.selection;
   let text = editor.document.getText(selection);
@@ -34,13 +64,9 @@ const insertConsole = async (type: InsertType) => {
 
   if (text) {
     await vscode.commands.executeCommand("editor.action.insertLineAfter");
-    const consoleText =
-      type === "table" ? `console.${type}(${text});` : `console.${type}('${text}: ', ${text});`;
-    insertText(consoleText);
-  } else {
-    const consoleText = `console.${type}();`;
-    insertText(consoleText);
   }
+  const consoleText = getText(type, text, color);
+  insertText(consoleText);
 };
 
 export function activate(context: vscode.ExtensionContext) {

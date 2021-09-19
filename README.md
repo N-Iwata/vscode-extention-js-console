@@ -21,6 +21,8 @@ This extension is available for free in the [Visual Studio Code Marketplace](htt
 
 ## Usage
 
+### basic
+
 With selection or cursor into the variable(Anything is OK):
 
 - Press Cmd+Shift+L => The output on a new line will be: console.log('variable: ', variable);
@@ -36,6 +38,18 @@ Without selection:
 - Press Cmd+Shift+E => The output on the same line will be: console.error();
 
 for windows Ctrl+Shift+・・・
+
+### text color
+
+Enabled to color the text of console.log.
+
+settings < extensions < JavaScript Insert Console < js-console.textColor
+
+example
+
+```
+console.log('%c name: ', 'color: #112233', name);
+```
 
 ## Contributing
 
