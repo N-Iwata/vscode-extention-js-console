@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 
 type InsertType = "log" | "table" | "warn" | "error";
 
-const isColor = (color: string) => {
+export const isColor = (color: string) => {
   return color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) !== null;
 };
 
@@ -21,7 +21,7 @@ const insertText = (text: string) => {
   });
 };
 
-const getText = (type: InsertType, text: string, color: string) => {
+export const getText = (type: InsertType, text: string, color: string) => {
   if (type === "log") {
     if (text) {
       if (color) {
