@@ -47,15 +47,13 @@ settings < extensions < JavaScript Insert Console < js-console.textColor
 
 example
 
-```
-console.log('%c name: ', 'color: #112233', name);
-```
+`console.log('%c name: ', 'color: #112233', name);`
 
 ## Contributing
 
 ### Pull requests
 
-Feel free to make a pull request to the develop branch to fix any bugs or suggestions for improvement.
+Feel free to make a pull request to the main branch to fix any bugs or suggestions for improvement.
 
 ### Issues
 
