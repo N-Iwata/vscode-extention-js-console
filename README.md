@@ -2,7 +2,7 @@
 
 ![header](images/github.png)
 
-![](https://img.shields.io/badge/Release-v0.5.0-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/Release-v0.7.0-blue.svg?style=flat-square)
 ![](https://img.shields.io/badge/vscode-^1.60.0-blue.svg?style=flat-square)
 
 ## Features
