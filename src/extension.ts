@@ -22,6 +22,12 @@ const insertText = (text: string) => {
 };
 
 export const getText = (type: InsertType, text: string, color: string) => {
+  const isSemicolon = vscode.workspace.getConfiguration("js-console").endWithSemicolon as boolean;
+  const isSingleQuotes = vscode.workspace.getConfiguration("js-console").useSingleQuotes as boolean;
+
+  const semicolon = isSemicolon ? `;` : ``;
+  const quotes = isSingleQuotes ? `'` : `"`;
+
   if (type === "log") {
     if (text) {
       if (color) {
@@ -29,20 +35,22 @@ export const getText = (type: InsertType, text: string, color: string) => {
           vscode.window.showInformationMessage(
             "Text color cannot be specified because the color code is incorrect."
           );
-          return `console.${type}('${text}: ', ${text});`;
+          return `console.${type}(${quotes}${text}: ${quotes}, ${text})${semicolon}`;
         } else {
-          return `console.${type}('%c ${text}: ', 'color: ${color}', ${text});`;
+          return `console.${type}(${quotes}%c ${text}: ${quotes}, ${quotes}color: ${color}${quotes}, ${text})${semicolon}`;
         }
       } else {
-        return `console.${type}('${text}: ', ${text});`;
+        return `console.${type}(${quotes}${text}: ${quotes}, ${text})${semicolon}`;
       }
     } else {
-      return `console.${type}();`;
+      return `console.${type}()${semicolon}`;
     }
   } else if (type === "table") {
-    return text ? `console.${type}(${text});` : `console.${type}();`;
+    return text ? `console.${type}(${text})${semicolon}` : `console.${type}()${semicolon}`;
   } else {
-    return text ? `console.${type}('${text}: ', ${text});` : `console.${type}();`;
+    return text
+      ? `console.${type}(${quotes}${text}: ${quotes}, ${text})${semicolon}`
+      : `console.${type}()${semicolon}`;
   }
 };
 
