@@ -49,6 +49,18 @@ example
 
 `console.log('%c name: ', 'color: #112233', name);`
 
+### semicolon
+
+Choose to have a semicolon or not.
+
+settings < extensions < JavaScript Insert Console < js-console.endWithSemicolon
+
+### singleQuotes
+
+Choose single quorts or double quorts.
+
+settings < extensions < JavaScript Insert Console < js-console.useSingleQuotes
+
 ## Contributing
 
 ### Pull requests

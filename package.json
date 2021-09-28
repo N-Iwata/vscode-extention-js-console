@@ -71,6 +71,16 @@
           "type": "string",
           "default": "",
           "description": "Enter the text color for console.log.(ex: #23d541, #ff0, etc...)"
+        },
+        "js-console.endWithSemicolon": {
+          "type": "boolean",
+          "default": "true",
+          "description": "Place a semicolon at the end of the console statement line."
+        },
+        "js-console.useSingleQuotes": {
+          "type": "boolean",
+          "default": "true",
+          "description": "Use single quotes."
         }
       }
     }
