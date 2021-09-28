@@ -21,10 +21,13 @@ const insertText = (text: string) => {
   });
 };
 
-export const getText = (type: InsertType, text: string, color: string) => {
-  const isSemicolon = vscode.workspace.getConfiguration("js-console").endWithSemicolon as boolean;
-  const isSingleQuotes = vscode.workspace.getConfiguration("js-console").useSingleQuotes as boolean;
-
+export const getText = (
+  type: InsertType,
+  text: string,
+  color: string,
+  isSemicolon: boolean,
+  isSingleQuotes: boolean
+) => {
   const semicolon = isSemicolon ? `;` : ``;
   const quotes = isSingleQuotes ? `'` : `"`;
 
@@ -60,6 +63,8 @@ const insertConsole = async (type: InsertType) => {
     return;
   }
   const color = vscode.workspace.getConfiguration("js-console").get("textColor") as string;
+  const isSemicolon = vscode.workspace.getConfiguration("js-console").endWithSemicolon as boolean;
+  const isSingleQuotes = vscode.workspace.getConfiguration("js-console").useSingleQuotes as boolean;
 
   let selection = editor.selection;
   let text = editor.document.getText(selection);
@@ -73,7 +78,7 @@ const insertConsole = async (type: InsertType) => {
   if (text) {
     await vscode.commands.executeCommand("editor.action.insertLineAfter");
   }
-  const consoleText = getText(type, text, color);
+  const consoleText = getText(type, text, color, isSemicolon, isSingleQuotes);
   insertText(consoleText);
 };
 
