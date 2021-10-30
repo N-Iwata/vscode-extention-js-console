@@ -1,5 +1,7 @@
 # vscode-extension-js-console
 
+> This extension is based on Ben White extension (https://github.com/whtouche/vscode-js-console-utils).
+
 ![header](images/github.png)
 
 ![](https://img.shields.io/badge/Release-v0.7.0-blue.svg?style=flat-square)
