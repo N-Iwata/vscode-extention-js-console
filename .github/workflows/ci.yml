@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set Node.js 14
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "14"
       - name: Get NPM cache directory
@@ -39,7 +39,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set Node.js 14
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "14"
       - name: Get NPM cache directory
