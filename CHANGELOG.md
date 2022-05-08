@@ -4,7 +4,13 @@ All notable changes to the "js-console" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [v0.8.0]
+## [v0.8.2]
+
+### Add to support vue
+
+Add to support vue file.
+
+## [v0.8.1]
 
 ### Change to support only js,jsx,ts,tsx
 

@@ -3,7 +3,7 @@
   "displayName": "JavaScript Insert Console",
   "description": "VSCode extension. Easily insert console statements.",
   "icon": "images/icon.png",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "publisher": "N-Iwata",
   "repository": "https://github.com/N-Iwata/vscode-extension-js-console",
   "engines": {
@@ -43,44 +43,44 @@
         "command": "js-console.insertConsoleLog",
         "key": "shift+ctrl+l",
         "mac": "shift+cmd+l",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
       },
       {
         "command": "js-console.insertConsoleTable",
         "key": "shift+ctrl+t",
         "mac": "shift+cmd+t",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
       },
       {
         "command": "js-console.insertConsoleWarn",
         "key": "shift+ctrl+w",
         "mac": "shift+cmd+w",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
       },
       {
         "command": "js-console.insertConsoleError",
         "key": "shift+ctrl+e",
         "mac": "shift+cmd+e",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
       }
     ],
     "menus": {
       "commandPalette": [
         {
           "command": "js-console.insertConsoleLog",
-          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
         },
         {
           "command": "js-console.insertConsoleTable",
-          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
         },
         {
           "command": "js-console.insertConsoleWarn",
-          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
         },
         {
           "command": "js-console.insertConsoleError",
-          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue"
         }
       ]
     },
