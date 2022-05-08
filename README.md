@@ -41,6 +41,8 @@ Without selection:
 
 for windows Ctrl+Shift+・・・
 
+only .js, .jsx, .ts, .tsx file supported.
+
 ### text color
 
 Enabled to color the text of console.log.

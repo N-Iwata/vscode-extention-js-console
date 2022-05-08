@@ -4,6 +4,12 @@ All notable changes to the "js-console" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [v0.8.0]
+
+### Change to support only js,jsx,ts,tsx
+
+Change to support only .js, .jsx, .ts, .tsx file.
+
 ## [v0.7.0]
 
 ### semicolon
