@@ -5,7 +5,7 @@
 ![header](images/github.png)
 
 ![](https://img.shields.io/badge/Release-v0.7.0-blue.svg?style=flat-square)
-![](https://img.shields.io/badge/vscode-^1.60.0-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/vscode-^1.67.0-blue.svg?style=flat-square)
 
 ## Features
 
@@ -15,7 +15,7 @@ VSCode extension. Easily insert console statements., by N-Iwata[(@rpf_nob)](http
 
 ## Requirements
 
-Visual Studio Code 1.60.0 later
+Visual Studio Code 1.67.0 later
 
 ## Installing
 
