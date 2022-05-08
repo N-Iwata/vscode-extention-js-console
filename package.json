@@ -43,27 +43,47 @@
         "command": "js-console.insertConsoleLog",
         "key": "shift+ctrl+l",
         "mac": "shift+cmd+l",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
       },
       {
         "command": "js-console.insertConsoleTable",
         "key": "shift+ctrl+t",
         "mac": "shift+cmd+t",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
       },
       {
         "command": "js-console.insertConsoleWarn",
         "key": "shift+ctrl+w",
         "mac": "shift+cmd+w",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
       },
       {
         "command": "js-console.insertConsoleError",
         "key": "shift+ctrl+e",
         "mac": "shift+cmd+e",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
       }
     ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "js-console.insertConsoleLog",
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        },
+        {
+          "command": "js-console.insertConsoleTable",
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        },
+        {
+          "command": "js-console.insertConsoleWarn",
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        },
+        {
+          "command": "js-console.insertConsoleError",
+          "when": "editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact"
+        }
+      ]
+    },
     "configuration": {
       "title": "JavaScript Insert Console",
       "properties": {
