@@ -117,11 +117,11 @@
     "@types/vscode": "1.67.0",
     "@types/glob": "7.2.0",
     "@types/mocha": "9.1.1",
-    "@types/node": "16.11.33",
+    "@types/node": "16.11.36",
     "eslint": "8.15.0",
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "@typescript-eslint/parser": "5.26.0",
-    "glob": "8.0.1",
+    "glob": "8.0.3",
     "mocha": "10.0.0",
     "typescript": "4.6.4",
     "vscode-test": "1.6.1"
