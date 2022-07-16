@@ -43,25 +43,25 @@
         "command": "js-console.insertConsoleLog",
         "key": "shift+ctrl+l",
         "mac": "shift+cmd+l",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html || editorLangId == svelte"
       },
       {
         "command": "js-console.insertConsoleTable",
         "key": "shift+ctrl+t",
         "mac": "shift+cmd+t",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html || editorLangId == svelte"
       },
       {
         "command": "js-console.insertConsoleWarn",
         "key": "shift+ctrl+w",
         "mac": "shift+cmd+w",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html || editorLangId == svelte"
       },
       {
         "command": "js-console.insertConsoleError",
         "key": "shift+ctrl+e",
         "mac": "shift+cmd+e",
-        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html"
+        "when": "editorTextFocus && editorLangId == javascript || editorLangId == typescript || editorLangId == javascriptreact || editorLangId == typescriptreact || editorLangId == vue || editorLangId == html || editorLangId == svelte"
       }
     ],
     "menus": {
