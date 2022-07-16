@@ -41,7 +41,7 @@ Without selection:
 
 for windows Ctrl+Shift+・・・
 
-only .js, .jsx, .ts, .tsx, .vue, .html file supported.
+only .js, .jsx, .ts, .tsx, .vue, .svelte, .html file supported.
 
 ### text color
 

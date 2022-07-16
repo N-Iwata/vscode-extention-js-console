@@ -4,6 +4,12 @@ All notable changes to the "js-console" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [v0.8.4]
+
+### Add to support svelte
+
+Add to support .svelte file.
+
 ## [v0.8.3]
 
 ### Add to support html
